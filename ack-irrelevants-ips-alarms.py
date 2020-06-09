@@ -69,7 +69,6 @@ if __name__ == "__main__":
             if device_url: 
 
                 #Stripping arguments from resource uri. Will return onyl ressource path. 
-                #Exemple: urlparse('https://mtllvismappr03.mtl.cbc.ca:8443/index.html#__Shell').path -> '/index.html'
                 resource_path= urlparse(device_url).path
 
                 #If the resource_path matches the ressources gave as cli arguments or no matches have been given, continue and check the file.
@@ -89,7 +88,7 @@ if __name__ == "__main__":
                     try:
                         response = requests.get(url, 
                             verify=False, 
-                            headers = {'User-Agent': 'ack_irrelevants.py'}, 
+                            headers = {'User-Agent': 'Mozilla/5.0'}, 
                             timeout=60)
                     except Exception as err :
                         response = err
